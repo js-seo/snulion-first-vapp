@@ -1,0 +1,241 @@
+
+.index-title {
+	font-family: 'EliceDigitalBaeum_Bold';
+	margin: 35px 0 30px 0;
+	display: flex;
+	align-items: center;
+}
+.tag-search-container {
+	display: flex;
+}
+.tag-search-container .tag-container {
+	width: 50%;
+}
+.tag-search-container .tag-container a {
+	color: #000;
+}
+.tag-search-container .tag-container a:hover {
+	color: #9c79ff;
+}
+.tag-search-container .search-container {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	width: 50%;
+}
+.tag-search-container .search-container #search-bar, .tag-search-container .search-container #search-btn {
+	margin-right: 20px;
+}
+.posts-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+.posts-container .post-container {
+	width: 20vw;
+	margin: 10px 25px;
+	border: 2px solid #fdd8f5;
+	border-radius: 5px;
+}
+.posts-container .post-container a {
+	text-decoration: none;
+	color: black;
+}
+.posts-container .post-container.hide {
+	display: none;
+}
+.posts-container .card {
+	margin: 0 25px 25px 0;
+	background-color: #f6f6f6;
+	border: none;
+	box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.15);
+}
+.posts-container .card a {
+	color: #000;
+}
+.posts-container .card a:hover {
+	color: #9c79ff;
+}
+.posts-container .card .like-wrapper a:hover {
+	color: #ffa8ec;
+}
+
+body {
+	display: flex;
+	height: 100%;
+	min-height: auto;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: 100px;
+}
+nav .navbar-brand {
+	font-family: 'EliceDigitalBaeum_Bold';
+}
+nav .dropdown-menu {
+	padding: 8px;
+	min-width: 230px;
+}
+nav .nav-li {
+	padding: 8px;
+}
+main {
+	height: 100%;
+	padding: 30px 30px 100px 30px;
+}
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+footer .copyright-container {
+	height: 5vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	background-color: #ffec9f;
+}
+footer .copyright-container .logo {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+}
+footer .copyright-container .copyright {
+	font-size: 16px;
+	font-weight: bold;
+}
+#log-out-modal {
+	opacity: 0;
+	transition: opacity 0.3s, z-index 0.3s;
+	box-sizing: border-box;
+	width: 500px;
+	height: 400px;
+	position: absolute;
+	z-index: -1;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: 0px 5px 10px #e7e7e7;
+}
+#log-out-modal:hover {
+	box-shadow: 0px 5px 15px #e7e7e7;
+}
+#log-out-modal.show {
+	opacity: 1;
+	z-index: 999;
+}
+#log-out-modal .modal-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	height: 20px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+#log-out-modal .modal-header .viewed-post-count {
+	font-weight: bold;
+}
+#log-out-modal .modal-content {
+	height: 280px;
+	margin: 0;
+	padding: 0;
+	overflow-y: auto;
+}
+#log-out-modal .modal-content .viewed-post {
+	display: block;
+	align-items: center;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	list-style: none;
+	font-weight: 500;
+	font-size: 18px;
+	cursor: pointer;
+	border-radius: 10px;
+	padding: 0 10px;
+}
+#log-out-modal .modal-content .viewed-post:hover {
+	background-color: #e9e9e9;
+}
+#log-out-modal .modal-content .viewed-post + .viewed-post {
+	margin-top: 10px;
+}
+#log-out-modal .modal-content::-webkit-scrollbar {
+	width: 20px;
+}
+#log-out-modal .modal-content::-webkit-scrollbar-thumb {
+	background-color: #ffe5c2;
+	border-radius: 10px;
+	background-clip: padding-box;
+	border: 5px solid transparent;
+}
+#log-out-modal .modal-content::-webkit-scrollbar-thumb:hover {
+	background-color: #ffdbad;
+}
+#log-out-modal .modal-footer {
+	display: flex;
+	justify-content: flex-end;
+	height: 40px;
+	margin-top: 10px;
+}
+#log-out-modal .modal-footer .confirm, #log-out-modal .modal-footer .cancel {
+	font-weight: 500;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+#log-out-modal .modal-footer .confirm {
+	background-color: #ffe6e6;
+	margin-right: 20px;
+}
+#log-out-modal .modal-footer .confirm:hover {
+	background-color: #ffdcdc;
+}
+#log-out-modal .modal-footer .cancel {
+	background-color: #d6f5c4;
+}
+#log-out-modal .modal-footer .cancel:hover {
+	background-color: #ccf0b8;
+}
+
+html, body, div, span, applet, object, iframe, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	font-family: 'EliceDigitalBaeum_Regular';
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'EliceDigitalBaeum_Regular';
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after {
+	content: '';
+	content: none;
+}
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
