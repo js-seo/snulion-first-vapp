@@ -10,8 +10,7 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
   <script>
-    console.log(window.web3)
-    console.log("hi")
+    // TODO
   </script>
 </head>
 
@@ -28,7 +27,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
-              서동욱님, 안녕하세요!
+              서재성님, 안녕하세요!
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li class="nav-item">
@@ -44,39 +43,8 @@
     </div>
   </nav>
   <main>
-    <div class="posts-container">
-      <div id="post-{{ post.id }}" class="card post-container" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title post-container-title"> 안녕하세요 </h5>
-          <h6 class="card-subtitle mb-2 text-muted">작성자 : 서동욱</h6>
-          <p class="card-text"> 처음 만나는 Dapp </p>
-        </div>
-      </div>
-      <div id="post-{{ post.id }}" class="card post-container" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title post-container-title"> 안녕하세요 </h5>
-          <h6 class="card-subtitle mb-2 text-muted">작성자 : 이현민</h6>
-          <p class="card-text"> 반갑습니다 :) 멋사 4기 이현민입니다. </p>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <h1>new post</h1>
-      <form action="{% url 'blogPosts:index' %}" method="POST">
-        <p>title</p>
-        <input name="title" /> <br />
-        <p>content</p>
-        <textarea name="content" rows="30" cols="50"></textarea> <br />
-        <input type="submit" value="submit" />
-      </form>
-    </div>
   </main>
   <div id="log-out-modal">
-    <div class="modal-header">
-      오늘은 총&nbsp;<span class="viewed-post-count">0</span>개의 글을
-      읽으셨네요!
-    </div>
     <ul class="modal-content"></ul>
     <div class="modal-footer">
       <button class="confirm">로그아웃</button>
