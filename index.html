@@ -27,9 +27,20 @@
         solutionPath: 'https://cdn.jsdelivr.net/npm/@mediapipe/hands'
       }
       handPoseDetection.createDetector(model, detectorConfig).then((detector) => {
+        const thankYou = document.querySelector('.thank-you');
         function checkFinger() {
           detector.estimateHands(video).then((output) => {
-            console.log('estimateHands result', output);
+            const data = output[0]
+            if (data) {
+              const tips = data.keypoints.filter((keypoint) => keypoint.name.endsWith('tip'));
+              const thumb = tips.find((keypoint) => keypoint.name.includes('thumb'));
+              const pinky = tips.find((keypoint) => keypoint.name.includes('pinky'));
+              const diff = pinky.y - thumb.y
+              const isThumbUp = diff > 200;
+              thankYou.style.display = isThumbUp ? 'block' : 'none';
+            } else {
+              thankYou.style.display = 'none';
+            }
             window.requestAnimationFrame(checkFinger);
           })
         }
@@ -71,7 +82,7 @@
   </nav>
   <main style='relative'>
     <video autoplay></video>
-    <p class='thank-you' style='position: absolute; top: 100px; left: 70px; font-size: 100px; color: green;'>감사합니다!</p>
+    <p class='thank-you' style='position: absolute; top: 100px; left: 70px; font-size: 100px; color: green; display: none;'>감사합니다!</p>
   </main>
   <div id="log-out-modal">
     <ul class="modal-content"></ul>
