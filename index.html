@@ -36,7 +36,10 @@
               const thumb = tips.find((keypoint) => keypoint.name.includes('thumb'));
               const pinky = tips.find((keypoint) => keypoint.name.includes('pinky'));
               const diff = pinky.y - thumb.y
-              const isThumbUp = diff > 200;
+              const thumbs = data.keypoints.filter((keypoint) => keypoint.name.includes('thumb'));
+              const thumbXs = thumbs.map((keypoint) => keypoint.x);
+              const isStanding = Math.max(...thumbXs) - Math.min(...thumbXs) < 100;
+              const isThumbUp = diff > 200 && isStanding;
               thankYou.style.display = isThumbUp ? 'block' : 'none';
             } else {
               thankYou.style.display = 'none';
