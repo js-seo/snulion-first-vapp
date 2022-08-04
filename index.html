@@ -10,7 +10,10 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
   <script>
-    // TODO
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then((stream) => {
+      const video = document.querySelector('video');
+      video.srcObject = stream;
+    })
   </script>
 </head>
 
@@ -43,6 +46,7 @@
     </div>
   </nav>
   <main>
+    <video autoplay></video>
   </main>
   <div id="log-out-modal">
     <ul class="modal-content"></ul>
